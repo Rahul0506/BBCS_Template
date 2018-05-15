@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyChatBot</title>
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+		<div class="messageboard">
+			{% for line in chats %}
+				<br>{{ line['chat'] }}
+			{% endfor %}
+		</div>
+		
+		<div class="chat">
+			<form action="{{ url_for('record') }}" method='post'>
+				<input type="text" name="input" value="Type here">
+				<p><input type="submit"></p>
+			</form>
+		</div>
+    </body>
+</html>
